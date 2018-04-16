@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    name: hikariCP
+    url: jdbc:mysql://127.0.0.1:3306/entrust
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  freemarker:
+    template-loader-path: classpath:/statics/html
+    cache: false
+    charset: utf-8
+    content-type: text/html
+    suffix: .ftl
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    check-template-location: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.entrust.domain.entity

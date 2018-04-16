@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.dao.CityDao">
+	<resultMap id="UserResultMap" type="com.entrust.domain.entity.User">
+		<result column="id" property="id" />
+		<result column="user_name" property="username"/>
+		<result column="nick" property="nick"/>
+		<result column="email" property="email"/>
+		<result column="phone" property="phone"/>
+		<result column="type" property="type"/>
+		<result column="gender" property="gender"/>
+		<result column="register_ip" property="registerIP"/>
+		<result column="create_time" property="createTime"/>
+		<result column="modify_time" property="modifyTime"/>
+	</resultMap>
+
+	<sql id="BASE_COLUMN">
+		id, username, nick, email, phone, type, gender, registerIP, createTime, modifyTime
+	</sql>
+
+	<select id="findByEmail" resultMap="UserResultMap" parameterType="java.lang.String">
+		SELECT
+		<include refid="BASE_COLUMN" />
+		FROM user_info
+		WHERE email = #{email}
+	</select>
+
+</mapper>
