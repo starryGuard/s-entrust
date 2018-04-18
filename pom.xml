@@ -15,6 +15,7 @@
         <module>s-entrust-service</module>
         <module>s-entrust-web</module>
         <module>s-entrust-domain</module>
+        <module>s-entrust-man</module>
     </modules>
 
     <properties>
@@ -35,6 +36,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

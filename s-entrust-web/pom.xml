@@ -18,11 +18,6 @@
             <artifactId>s-entrust-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.s-entrust</groupId>
-            <artifactId>s-entrust-domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
 </project>

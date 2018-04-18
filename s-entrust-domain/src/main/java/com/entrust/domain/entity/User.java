@@ -2,6 +2,8 @@ package com.entrust.domain.entity;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * 用户信息
  * Created by lixiaohan on 2018/4/12.
@@ -35,7 +37,7 @@ public class User {
     /**
      * 用户类型
      */
-    private String type;
+    private Integer type;
     /**
      * 头像
      */
@@ -51,11 +53,11 @@ public class User {
     /**
      * 创建时间
      */
-    private String createTime;
+    private Date createTime;
     /**
      * 更新时间
      */
-    private String modifyTime;
+    private Date modifyTime;
     /**
      * 是否有效
      */

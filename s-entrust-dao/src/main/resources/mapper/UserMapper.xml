@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="org.spring.springboot.dao.CityDao">
+<mapper namespace="com.entrust.dao.UserMapper">
 	<resultMap id="UserResultMap" type="com.entrust.domain.entity.User">
-		<result column="id" property="id" />
+		<id column="id" property="id" />
 		<result column="user_name" property="username"/>
 		<result column="nick" property="nick"/>
 		<result column="email" property="email"/>
@@ -15,8 +15,20 @@
 	</resultMap>
 
 	<sql id="BASE_COLUMN">
-		id, username, nick, email, phone, type, gender, registerIP, createTime, modifyTime
+		id, user_name, pass_word, nick, email, phone, type, gender, register_ip, create_time, modify_time,yn
 	</sql>
+
+	<insert id="insertUser" keyProperty="id" keyColumn="id" useGeneratedKeys="true" parameterType="com.entrust.domain.entity.User">
+		INSERT INTO user_info
+		<trim prefix="(" suffix=")" prefixOverrides="id,">
+			<include refid="BASE_COLUMN"/>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")">
+			#{username},#{password},#{nick},#{email},#{phone},#{type},#{gender},#{registerIP},#{createTime},#{modifyTime},1
+		</trim>
+	</insert>
+	
 
 	<select id="findByEmail" resultMap="UserResultMap" parameterType="java.lang.String">
 		SELECT
